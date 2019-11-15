@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
-//#include <ctype.h>
 
 #define TAILLE 3
 #define REMPLISSAGE ' '
@@ -34,7 +32,7 @@ int main()
         AffichageGrilleMorpion(c_GrilleMorpion);
         if (n_Resultat==1)
         {
-            //Seul le joueur qui vient de joué peut avoir gagné.
+            //Seul le joueur qui vient de jouÃ© peut avoir gagnÃ©.
             if (n_BoolJ1==1)
             {
                 printf("Le Joueur 1 a gagne !");
@@ -61,8 +59,8 @@ int main()
 
 void InitialisationGrilleMorpion(char c_GrilleMorpion[TAILLE][TAILLE], char c_Remplissage)
 //BUT : Initialiser la grille du Morpion.
-//ENTREE : La grille à initialiser et le caractère de remplissage.
-//SORTIE : La grille initialisée.
+//ENTREE : La grille Ã  initialiser et le caractÃ¨re de remplissage.
+//SORTIE : La grille initialisÃ©e.
 {
     int n_I, n_J;
     for (n_I=0; n_I<TAILLE; n_I++)
@@ -77,7 +75,7 @@ void InitialisationGrilleMorpion(char c_GrilleMorpion[TAILLE][TAILLE], char c_Re
 void AffichageGrilleMorpion (char c_GrilleMorpion[TAILLE][TAILLE])
 //BUT : Afficher la grille du morpion.
 //ENTREE : La grille du morpion.
-//SORTIE : La grille du morpion affichée.
+//SORTIE : La grille du morpion affichÃ©e.
 {
     int n_I, n_J;
     printf("     1   2   3\n");
@@ -97,9 +95,9 @@ void AffichageGrilleMorpion (char c_GrilleMorpion[TAILLE][TAILLE])
 }
 
 void GestionDuTourDuJoueur(int n_BoolJ1,char c_GrilleMorpion[TAILLE][TAILLE])
-//BUT : Gérer le tour d'un joueur.
-//ENTREE : La coordonnée où mettre la marque du joueur.
-//SORTIE : Le tableau du Morpion avancé et les conditions de victoire.
+//BUT : GÃ©rer le tour d'un joueur.
+//ENTREE : La coordonnÃ©e oÃ¹ mettre la marque du joueur.
+//SORTIE : Le tableau du Morpion avancÃ© et les conditions de victoire.
 {
     char c_CaractereDuJoueur;
     if (n_BoolJ1==1)
@@ -142,23 +140,23 @@ void GestionDuTourDuJoueur(int n_BoolJ1,char c_GrilleMorpion[TAILLE][TAILLE])
 }
 
 int ConditionDeVictoire(char c_GrilleMorpion[TAILLE][TAILLE])
-//BUT : Définir si la partie est terminée ou non.
-//ENTREE : La grille du morpion après une action d'un joueur.
-//SORTIE : 0 si la partie n'est pas finit, 1 si on a un gagnant, 2 si c'est une égalité.
+//BUT : DÃ©finir si la partie est terminÃ©e ou non.
+//ENTREE : La grille du morpion aprÃ¨s une action d'un joueur.
+//SORTIE : 0 si la partie n'est pas finit, 1 si on a un gagnant, 2 si c'est une Ã©galitÃ©.
 {
-    //On vérifie les colonnes
+    //On vÃ©rifie les colonnes
     if (((c_GrilleMorpion[0][0]==c_GrilleMorpion[0][1])&&(c_GrilleMorpion[0][0]==c_GrilleMorpion[0][2])&&(c_GrilleMorpion[0][0]!=REMPLISSAGE)) || ((c_GrilleMorpion[1][0]==c_GrilleMorpion[1][1])&&(c_GrilleMorpion[1][0]==c_GrilleMorpion[1][2])&&(c_GrilleMorpion[1][0]!=REMPLISSAGE)) || ((c_GrilleMorpion[2][0]==c_GrilleMorpion[2][1])&&(c_GrilleMorpion[2][0]==c_GrilleMorpion[2][2])&&(c_GrilleMorpion[2][0]!=REMPLISSAGE)))
     {
         //Nous avons un gagnant, on retourne 1.
         return 1;
     }
-    //On vérifie les lignes.
+    //On vÃ©rifie les lignes.
     else if (((c_GrilleMorpion[0][0]==c_GrilleMorpion[1][0])&&(c_GrilleMorpion[0][0]==c_GrilleMorpion[2][0])&&(c_GrilleMorpion[0][0]!=REMPLISSAGE)) || ((c_GrilleMorpion[0][1]==c_GrilleMorpion[1][1])&&(c_GrilleMorpion[0][1]==c_GrilleMorpion[2][1])&&(c_GrilleMorpion[0][1]!=REMPLISSAGE)) || ((c_GrilleMorpion[0][2]==c_GrilleMorpion[1][2])&&(c_GrilleMorpion[0][2]==c_GrilleMorpion[2][2])&&(c_GrilleMorpion[0][2]!=REMPLISSAGE)))
     {
         //Nous avons un gagnant, on retourne 1.
         return 1;
     }
-    //On vérifie les diagonales.
+    //On vÃ©rifie les diagonales.
     else if (((c_GrilleMorpion[0][0]==c_GrilleMorpion[1][1])&&(c_GrilleMorpion[0][0]==c_GrilleMorpion[2][2])&&(c_GrilleMorpion[0][0]!=REMPLISSAGE)) || ((c_GrilleMorpion[2][0]==c_GrilleMorpion[1][1])&&(c_GrilleMorpion[2][0]==c_GrilleMorpion[0][2])&&(c_GrilleMorpion[2][0]!=REMPLISSAGE)))
     {
         //Nous avons un gagnant, on retourne 1.
@@ -166,7 +164,7 @@ int ConditionDeVictoire(char c_GrilleMorpion[TAILLE][TAILLE])
     }
     else
     {
-        //Si nous n'avons pas de vainqueur on vérifie si la grille est pleine.
+        //Si nous n'avons pas de vainqueur on vÃ©rifie si la grille est pleine.
         int n_BoolFin=1;//De base on dit que c'est la fin et si une case est vide, ce n'est pas la fin.
         int n_I=0;
         int n_J=0;
@@ -182,10 +180,10 @@ int ConditionDeVictoire(char c_GrilleMorpion[TAILLE][TAILLE])
         }
         if (n_BoolFin==1)
         {
-            //Si c'est la fin ici, c'est une égalité.
+            //Si c'est la fin ici, c'est une Ã©galitÃ©.
             return 2;
         }
     }
-    //Si on est arrivé jusque là on continue, la partie n'est pas finie.
+    //Si on est arrivÃ© jusque lÃ  on continue, la partie n'est pas finie.
     return 0;
 }
