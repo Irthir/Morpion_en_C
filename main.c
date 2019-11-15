@@ -45,7 +45,7 @@ int main()
         }
         else if (n_Resultat==2)
         {
-            printf("Plus de coups possibles c'est une egalite.");
+            printf("Plus de coup possible c'est une egalite.");
             n_BoolFinDuJeu=1;
         }
         else
